@@ -1,0 +1,38 @@
+# Ignorar arquivos temporários do Xcode
+*.xcuserstate
+*.xcscmblueprint
+
+# Ignorar arquivos de configuração do usuário
+**/xcuserdata/
+**/DerivedData/
+
+# Ignorar arquivos de build
+build/
+
+# Ignorar arquivos do Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# Ignorar arquivos do CocoaPods (se usar)
+Pods/
+*.xcworkspace
+
+# Ignorar arquivos do Carthage (se usar)
+Carthage/
+
+# Ignorar arquivos do Fastlane (se usar)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Ignorar arquivos do SPM (Swift Package Manager)
+.idea/
+.swiftpm/
+.build/
+
+# Ignorar caches e arquivos do macOS
+.DS_Store
+*.swp
+*.lock
+*.tmp
