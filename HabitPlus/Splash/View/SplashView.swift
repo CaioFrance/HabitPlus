@@ -1,37 +1,33 @@
 import SwiftUI
 
 struct SplashView: View {
-
     @ObservedObject var viewModel: SplashViewModel
 
     var body: some View {
-        
         Group {
             switch viewModel.uiState {
             case .loading:
                 loadingView()
             case .goToSignScreen:
-                Text("Indo para a tela de login")
+                viewModel.signInView()
             case .goToHomeScreen:
-                Text("Indo para a tela de principal")
+                viewModel.homeView()
             case .error(let error):
                 loadingView(error: error)
             }
         }
         .onAppear(perform: viewModel.onApper)
-        
     }
 }
 
 extension SplashView {
-
     func loadingView(error: String? = nil) -> some View {
-
         ZStack {
             VStack {
                 Image("logo")
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 200)
                     .scaleEffect(viewModel.isPulsing ? 1.1 : 1.0)
                     .opacity(viewModel.isPulsing ? 0.7 : 1.0)
                     .animation(
@@ -60,7 +56,6 @@ extension SplashView {
                 Text(error ?? "")
             })
     }
-
 }
 
 #Preview {
